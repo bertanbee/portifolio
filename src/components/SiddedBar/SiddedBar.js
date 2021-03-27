@@ -1,4 +1,4 @@
-iimport React from 'react';
+import React from 'react';
 
 //importing styled-components for styling
 import styled from 'styled-components';
