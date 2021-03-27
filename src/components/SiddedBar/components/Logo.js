@@ -12,6 +12,10 @@ function Logo() {
          ---> Styled-components items
     */
    const LogoImage = styled.img`
+   @media only screen and (max-width: 1000px) {
+    height: 60px;
+    width: 60px;
+   }
    margin-top: -45px;
    opacity: 0.8;
    border-radius: 100%;
