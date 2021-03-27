@@ -2,9 +2,7 @@ import React from 'react';
 
 //importing components
 import SearchBar from './components/SearchBar';
-import DidYouFindSomethingWrong from './components/DidYouFindSomethingWrong';
 import Internalization from './components/Internalization';
-import ChangeTheme from './components/ChangeTheme';
 
 //importing styled-components for styling
 import styled from 'styled-components';
