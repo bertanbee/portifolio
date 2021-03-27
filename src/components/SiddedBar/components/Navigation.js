@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //importing styled-components for styling
 import styled from 'styled-components';
@@ -15,6 +15,28 @@ function Navigation() {
     const NavigationExternalBox = styled.div`
     margin-top: -45px;
     width: 88%;
+    .selected {
+        @keyframes animationnav {
+            0% {
+             padding-left: 12px;
+             margin-right: 0px;
+             border-top-right-radius: 100%; 
+             border-bottom-right-radius: 100%;
+             transition: 0.25s;
+            }
+            100% {
+             padding-left: 45px;
+             margin-right: -16px;
+             background-color: #DBD6D6;
+             border-top-left-radius: 45px; 
+             border-bottom-left-radius: 45px; 
+             transition: 0.25s;
+            }
+         }
+         animation-name: animationnav;
+         animation-duration: 0.25s;
+         animation-fill-mode: forwards;
+    }
     `
     const NavigationBox = styled.div`
      display: flex;
@@ -40,6 +62,8 @@ function Navigation() {
          padding-right: 12px;
          transition: 0.25s;
      }
+
+     
     `
     const NavigationText = styled.p`
    font-style: 'Ubuntu', sans-serif;
@@ -52,26 +76,38 @@ function Navigation() {
    pádding-bottom: 30px;
    `
 
+
+
+   /*
+         ---> Selected state
+    */
+   const [ selected, setSelected ] = useState({
+       intro: true,
+       projects: false,
+       resume: false,
+       contact: false,
+       favorites: false
+   });
     return (
         <NavigationExternalBox>
-            <NavigationBox>
+            <NavigationBox onClick={() => { selected.intro === false ? setSelected({intro: true, projects: false, resume: false, contact: false, favorites: false}) : setSelected(selected) }} className={selected.intro === true ? "selected" : ""}>
                 <BiUser fill="#282828" fontSize="24px" className="icon"></BiUser>
                 <NavigationText>INTRO</NavigationText>
             </NavigationBox>
-            <NavigationBox>
+            <NavigationBox onClick={() => { setSelected({intro: false, projects: true, resume: false, contact: false, favorites: false}) }} className={selected.projects === true ? "selected" : ""}>
                 <BiPencil fill="#282828" fontSize="24px" className="icon"></BiPencil>
                 <NavigationText>PROJECTS</NavigationText>
             </NavigationBox>
-            <NavigationBox>
+            <NavigationBox onClick={() => { setSelected({intro: false, projects: false, resume: true, contact: false, favorites: false}) }} className={selected.resume === true ? "selected" : ""}>
                 <BiChalkboard fill="#282828" fontSize="24px" className="icon"></BiChalkboard>
                 <NavigationText>RESUME</NavigationText>
             </NavigationBox>
-            <NavigationBox>
+            <NavigationBox onClick={() => { setSelected({intro: false, projects: false, resume: false, contact: true, favorites: false}) }} className={selected.contact === true ? "selected" : ""}>
                 <BiEnvelope fill="#282828" fontSize="24px" className="icon"></BiEnvelope>
                 <NavigationText>CONTACT</NavigationText>
             </NavigationBox>
             <SeparationBox>
-                <NavigationBox>
+                <NavigationBox onClick={() => { setSelected({intro: false, projects: false, resume: false, contact: false, favorites: true}) }} className={selected.favorites === true ? "selected" : ""}>
                   <BiHeart fill="#282828" fontSize="24px" className="icon"></BiHeart>
                   <NavigationText>FAVORITES</NavigationText>
                 </NavigationBox>
