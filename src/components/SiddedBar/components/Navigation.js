@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //importing icons
-import { BiUser, BiChalkboard, BiEnvelope } from 'react-icons/bi';
+import { BiUser, BiChalkboard, BiEnvelope, BiHeart } from 'react-icons/bi';
 import { BiPencil } from 'react-icons/bi';
 
 function Navigation() {
@@ -47,6 +47,10 @@ function Navigation() {
    color: #282828;
    letter-spacing: 6px;
    `
+   const SeparationBox = styled.div`
+   padding-top: 30px;
+   pádding-bottom: 30px;
+   `
 
     return (
         <NavigationExternalBox>
@@ -66,6 +70,12 @@ function Navigation() {
                 <BiEnvelope fill="#282828" fontSize="24px" className="icon"></BiEnvelope>
                 <NavigationText>CONTACT</NavigationText>
             </NavigationBox>
+            <SeparationBox>
+                <NavigationBox>
+                  <BiHeart fill="#282828" fontSize="24px" className="icon"></BiHeart>
+                  <NavigationText>FAVORITES</NavigationText>
+                </NavigationBox>
+            </SeparationBox>    
         </NavigationExternalBox>
     );
 }
