@@ -16,29 +16,80 @@ function Navigation() {
     margin-top: -45px;
     width: 88%;
     .selected {
-        @keyframes animationnav {
-            0% {
-             padding-left: 12px;
-             margin-right: 0px;
-             border-top-right-radius: 100%; 
-             border-bottom-right-radius: 100%;
-             transition: 0.25s;
-            }
-            100% {
-             padding-left: 45px;
-             margin-right: -16px;
-             background-color: #DBD6D6;
-             border-top-left-radius: 45px; 
-             border-bottom-left-radius: 45px; 
-             transition: 0.25s;
-            }
-         }
-         animation-name: animationnav;
-         animation-duration: 0.25s;
-         animation-fill-mode: forwards;
+        @media only screen and (max-width: 1000px) {
+            @keyframes animationnav1 {
+                0% {
+                 padding-left: 12px;
+                 margin-right: 0px;
+                 border-top-right-radius: 100%; 
+                 border-bottom-right-radius: 100%;
+                 transition: 0.25s;
+                }
+                100% {
+                 padding-left: 0px;
+                 margin-right: -5px;
+                 background-color: #DBD6D6;
+                 border-top-left-radius: 45px; 
+                 border-bottom-left-radius: 45px; 
+                 transition: 0.25s;
+                }
+             }
+             animation-name: animationnav1;
+             animation-duration: 0.25s;
+             animation-fill-mode: forwards;
+        }
+        @media only screen and (min-width: 1000px) {
+            @keyframes animationnav2 {
+                0% {
+                 padding-left: 12px;
+                 margin-right: 0px;
+                 border-top-right-radius: 100%; 
+                 border-bottom-right-radius: 100%;
+                 transition: 0.25s;
+                }
+                100% {
+                 padding-left: 45px;
+                 margin-right: -16px;
+                 background-color: #DBD6D6;
+                 border-top-left-radius: 45px; 
+                 border-bottom-left-radius: 45px; 
+                 transition: 0.25s;
+                }
+             }
+             animation-name: animationnav2;
+             animation-duration: 0.25s;
+             animation-fill-mode: forwards;
+         
+        }
     }
     `
     const NavigationBox = styled.div`
+     @media only screen and (max-width: 1000px) {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-direction: row;
+        color: #4E4E4E;
+        :hover {
+            cursor: pointer;
+            .text {
+                color: #282828;
+                transition: 0.25s;
+            }
+            .icon {
+                padding-left: 18px;
+                fill: #282828;
+                transition: 0.25s;
+            }
+        }
+       }
+        .icon {
+            fill: #4E4E4E;
+            padding: 24px;
+            transition: 0.25s;
+        }
+     }
+     @media only screen and (min-width: 1000px) {
      display: flex;
      justify-content: left;
      align-items: center;
@@ -56,24 +107,35 @@ function Navigation() {
              transition: 0.25s;
          }
      }
+    }
      .icon {
          fill: #4E4E4E;
          padding: 24px;
          padding-right: 12px;
          transition: 0.25s;
      }
-
+    }
      
     `
     const NavigationText = styled.p`
+    @media only screen and (max-width: 1000px) {
+        display: none;
+    }
+    @media only screen and (min-width: 1000px) {
    font-style: 'Ubuntu', sans-serif;
    font-size: 16px;
    color: #282828;
    letter-spacing: 6px;
+    }
    `
    const SeparationBox = styled.div`
-   padding-top: 30px;
-   pádding-bottom: 30px;
+   @media only screen and (max-width: 1000px) {
+    padding-top: 21px;
+   }
+   @media only screen and (min-width: 1000px) {
+    padding-top: 30px;
+   }
+   
    `
 
 
