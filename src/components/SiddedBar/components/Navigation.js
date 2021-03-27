@@ -13,8 +13,15 @@ function Navigation() {
          ---> Styled-components items
     */
     const NavigationExternalBox = styled.div`
-    margin-top: -45px;
-    width: 88%;
+    @media only screen and (max-width: 1000px) {
+        margin-top: -160px;
+        width: 88%;
+    }
+    @media only screen and (min-width: 1000px) {
+        margin-top: -45px;
+        width: 88%;
+    }
+    
     .selected {
         @media only screen and (max-width: 1000px) {
             @keyframes animationnav1 {
