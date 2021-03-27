@@ -19,7 +19,7 @@ function SiddedBar() {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        height: 100vh;
+        height: 98.3vh;
         width: 60px;
     }
     display: flex;
