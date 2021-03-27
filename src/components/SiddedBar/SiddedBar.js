@@ -1,4 +1,4 @@
-import React from 'react';
+iimport React from 'react';
 
 //importing styled-components for styling
 import styled from 'styled-components';
@@ -6,7 +6,6 @@ import styled from 'styled-components';
 //importing elements
 import Logo from './components/Logo';
 import Navigation from './components/Navigation';
-import Favorites from './components/Favorites';
 
 function SiddedBar() {
 
@@ -31,7 +30,6 @@ function SiddedBar() {
         <Container>
             <Logo></Logo>
             <Navigation></Navigation>
-            <Favorites></Favorites>
         </Container>
     );
 }
