@@ -28,17 +28,16 @@ function TopBar() {
          const RightButtons = styled.div`
          display: flex;
          flex-direction: row;
-         justify-content: space-between;
+         justify-content: right;
          align-items: center;
          width: 50%;
+         padding-right: 6%;
          `
     return (
         <Container>
             <SearchBar></SearchBar>
             <RightButtons>
-                <DidYouFindSomethingWrong></DidYouFindSomethingWrong>
                 <Internalization></Internalization>
-                <ChangeTheme></ChangeTheme>
             </RightButtons>
         </Container>
     );
