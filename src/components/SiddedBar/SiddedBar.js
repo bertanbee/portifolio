@@ -14,6 +14,14 @@ function SiddedBar() {
     */
 
     const Container = styled.div`
+    @media only screen and (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        width: 60px;
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
